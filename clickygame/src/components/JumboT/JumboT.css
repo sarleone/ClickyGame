@@ -1,0 +1,34 @@
+.jumboT {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  /* .jumboT::after {
+    content: "";
+    display: block;
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+  } */
+  
+  .jumboT * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .jumboT h1, .jumboT h2 {
+    color: white;
+  }
+  
+  .jumboT h1 {
+    font-size: 60px;
+    padding-top: 75px;
+    margin-top: 0;
+  }
+  
