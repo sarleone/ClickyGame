@@ -4,9 +4,10 @@ import "./QueenCard.css";
 const QueenCard = props => (
   <div className="card">
     <div className="img-container">
-      <img alt={props.name} src={props.image} />
+      <img alt={props.name} src={props.image} onClick={()=> props.onClickHandler(props.id)}/>
     </div>
-    {/* <span onClick={()=> props.shuffleQueens(props.id)} className="remove">𝘅</span> */}
+    {/* on click event to shuffle cards on each click */}
+    {/* <span onClick={()=> props.shuffleCards(props.id)} {props.image </span> */}
   </div>
 );
 
