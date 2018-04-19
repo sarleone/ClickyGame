@@ -24,10 +24,14 @@ npm manifest:
       "react-scripts": "1.1.4"
     },
     "scripts": {
-      "start": "react-scripts start",
-      "build": "babel src -d lib",
-      "test": "react-scripts test --env=jsdom",
+      "server": "node server.js",
+      "client": "node scripts/start-client.js",
+      "start":"nodemon server.js",
+      "build": "node scripts/build.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "installDeps": "yarn",
       "eject": "react-scripts eject",
+      "heroku-prebuild": "yarn install",
       "heroku-postbuild": "node scripts/build.js"
     }
   }
@@ -7287,9 +7291,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
+  Exit code: 127
   Command: sh
-  Arguments: -c react-scripts start
+  Arguments: -c nodemon server.js
   Directory: /Users/sarahleone/Documents/Northwestern_CB/19-REACT/02-Homework/ClickyGame
   Output:
   
