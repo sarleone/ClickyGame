@@ -3,13 +3,6 @@ nav.navbar.navbar-default {
 
 }
 
-.navbar navbar-expand-lg navbar-dark bg-primary {
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-
-}
-
 p {
     color: white;
     margin-left: 13%;

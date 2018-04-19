@@ -16,8 +16,6 @@ class App extends Component {
   };
 
   shuffleCards = () => {
-    //code here to shuffle images when clicked
-    console.log("shufflecards");
     let array = this.state.queens;
     let i = array.length -1,
     j = 0,
@@ -32,7 +30,6 @@ class App extends Component {
   };
 
   onClickHandler = id => {
-    console.log("onClickHandler");
     let found = this.state.queens.find(function(queen){
       return queen.id === id;
     })
@@ -40,18 +37,14 @@ class App extends Component {
       if (this.state.count > this.state.topCount) {
         this.setState({topCount: this.state.count});
       }
-      console.log("reset");
       this.state.queens.forEach(function(queen) {
         queen.clicked = false;
       });
       this.setState({count: 0});
-      console.log("back to 0")
     } else {
       found.clicked = true;
       this.shuffleCards();
-      console.log("queens: ", this.state.queens);
       this.setState({count: this.state.count +1});
-      console.log("added score");
     }
   }
   
