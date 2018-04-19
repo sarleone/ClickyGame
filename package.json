@@ -10,12 +10,12 @@
   "scripts": {
     "server": "node server.js",
     "client": "node scripts/start-client.js",
-    "start": "react-scripts start",
-    "build": "node scripts/build.js",
+    "start":  "react-scripts start",
+    "build": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "installDeps": "yarn",
     "eject": "react-scripts eject",
     "heroku-prebuild": "yarn install",
-    "heroku-postbuild": "node scripts/build.js"
+    "heroku-postbuild": "node build.js"
   }
 }
