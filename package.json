@@ -8,10 +8,14 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
     "start": "react-scripts start",
-    "build": "babel src -d lib",
-    "test": "jest",
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn",
     "eject": "react-scripts eject",
+    "heroku-prebuild": "cd client && yarn install",
     "heroku-postbuild": "node scripts/build.js"
   }
 }
