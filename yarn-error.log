@@ -25,9 +25,10 @@ npm manifest:
     },
     "scripts": {
       "start": "node server.js",
-      "build": "react-scripts build",
-      "test": "react-scripts test --env=jsdom",
-      "eject": "react-scripts eject"
+      "build": "babel src -d lib",
+      "test": "jest",
+      "eject": "react-scripts eject",
+      "heroku-postbuild": "node scripts/build.js"
     }
   }
 
