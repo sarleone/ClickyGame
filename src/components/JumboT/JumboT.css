@@ -24,11 +24,12 @@
   
   .jumboT h1, .jumboT h2 {
     color: white;
+    font-family: "Arial Black", Gadget, sans-serif;
   }
   
   .jumboT h1 {
     font-size: 60px;
-    padding-top: 75px;
+    padding-top: 100px;
     margin-top: 0;
   }
   

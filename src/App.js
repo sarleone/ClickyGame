@@ -11,7 +11,8 @@ import JumboT from './components/JumboT';
 class App extends Component {
   state = {
     queens,
-    count:0
+    count:0,
+    topCount:0
   };
 
   shuffleCards = () => {
@@ -29,18 +30,16 @@ class App extends Component {
     }
     return this.setState({queens:array});
   };
-  // if the score is zero reset 
-  // handleClickEvent(event) {
-  //   if(this.state.count ===0) {
-  //     queens = this.shuffleCards(queens);
-  //   }
-  // }
+
   onClickHandler = id => {
     console.log("onClickHandler");
     let found = this.state.queens.find(function(queen){
-      return queen.id == id;
+      return queen.id === id;
     })
     if (found.clicked){
+      if (this.state.count > this.state.topCount) {
+        this.setState({topCount: this.state.count});
+      }
       console.log("reset");
       this.state.queens.forEach(function(queen) {
         queen.clicked = false;
@@ -55,26 +54,14 @@ class App extends Component {
       console.log("added score");
     }
   }
-  //clickyGame
-  // if you click on a card that has not been selected before
-  // game [];
-    //push selected card into array
-    //if card id is not found in game array 
-      //score ++;
-    //else 
-      //reset game
-  
-  //reset game
-    //set score to 0
-    //empty game array
   
   render() {
     return (
       <div>
-        <NavBar count = {this.state.count} />
+        <NavBar count = {this.state.count} topCount ={this.state.topCount}/>
         <JumboT backgroundImage="http://hdblackwallpaper.com/wallpaper/2015/07/hot-pink-backgrounds-for-desktop-16-free-hd-wallpaper.jpg">
-      <h1>Clicky Game!</h1>
-      <h2>Click on an image to earn points but don't click more than once!</h2>
+      <h1>RuPaul's Drag Race Clicky Game</h1>
+      <h2>Click a queen to earn points but don't click the same queen twice!</h2>
         </JumboT>
         <Wrapper>
           {this.state.queens.map((queen, i) => (
