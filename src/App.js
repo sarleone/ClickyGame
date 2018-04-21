@@ -41,10 +41,14 @@ class App extends Component {
         queen.clicked = false;
       });
       this.setState({count: 0});
+      alert("Sashay away");
     } else {
       found.clicked = true;
       this.shuffleCards();
       this.setState({count: this.state.count +1});
+      if (this.setState.count === 12) {
+        alert("Shante, you stay")
+      }
     }
   }
   
