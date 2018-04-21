@@ -57,8 +57,9 @@ class App extends Component {
       <div>
         <NavBar count = {this.state.count} topCount ={this.state.topCount}/>
         <JumboT backgroundImage="http://hdblackwallpaper.com/wallpaper/2015/07/hot-pink-backgrounds-for-desktop-16-free-hd-wallpaper.jpg">
-      <h1>RuPaul's Drag Race Clicky Game</h1>
-      <h2>Click a queen to earn points but don't click the same queen twice!</h2>
+      <h1>RuPaul's Drag Race Season 10</h1>
+        <h2>Clicky Game</h2>
+      <h2><i>Can you snatch each queen? </i></h2>
         </JumboT>
         <Wrapper>
           {this.state.queens.map((queen, i) => (
