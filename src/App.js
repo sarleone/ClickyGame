@@ -5,13 +5,13 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import QueenCard from "./components/QueenCard";
-import queens from "./queens.json";
 import JumboT from './components/JumboT';
+import queens from "./queens.json";
 
 class App extends Component {
   state = {
     queens,
-    count:0,
+    count:1,
     topCount:0
   };
 
@@ -29,25 +29,31 @@ class App extends Component {
     return this.setState({queens:array});
   };
 
+  restartGame = () => {
+    this.shuffleCards();
+    this.state.queens.forEach(function(queen) {
+      queen.clicked = false;
+    });
+    this.setState({count: 1});
+    if (this.state.count > this.state.topCount) {
+      this.setState({topCount: this.state.count});
+    }
+  }
+
   onClickHandler = id => {
     let found = this.state.queens.find(function(queen){
       return queen.id === id;
     })
     if (found.clicked){
-      if (this.state.count > this.state.topCount) {
-        this.setState({topCount: this.state.count});
-      }
-      this.state.queens.forEach(function(queen) {
-        queen.clicked = false;
-      });
-      this.setState({count: 0});
+      this.restartGame();
       alert("Sashay away");
     } else {
       found.clicked = true;
       this.shuffleCards();
       this.setState({count: this.state.count +1});
-      if (this.setState.count === 12) {
-        alert("Shante, you stay")
+      if (this.state.count === 12) {
+        alert("Shante, you stay");
+        this.restartGame();
       }
     }
   }

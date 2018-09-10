@@ -26,13 +26,13 @@ npm manifest:
     "scripts": {
       "server": "node server.js",
       "client": "node scripts/start-client.js",
-      "start":"nodemon server.js",
-      "build": "node scripts/build.js",
+      "start":  "react-scripts start",
+      "build": "react-scripts build",
       "test": "echo \"Error: no test specified\" && exit 1",
       "installDeps": "yarn",
       "eject": "react-scripts eject",
       "heroku-prebuild": "yarn install",
-      "heroku-postbuild": "node scripts/build.js"
+      "heroku-postbuild": "react-scripts build"
     }
   }
 
@@ -7291,10 +7291,10 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 127
+  Exit code: 1
   Command: sh
-  Arguments: -c nodemon server.js
-  Directory: /Users/sarahleone/Documents/Northwestern_CB/19-REACT/02-Homework/ClickyGame
+  Arguments: -c react-scripts start
+  Directory: /Users/sarahleone/Documents/Northwestern_CB/19-REACT/Homework4Portfolio/ClickyGame
   Output:
   
       at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
