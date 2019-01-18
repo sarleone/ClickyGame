@@ -50,7 +50,9 @@ class App extends Component {
     } else {
       found.clicked = true;
       this.shuffleCards();
-      this.setState({count: this.state.count += 1});
+      this.setState({
+        count: this.state.count += 1
+      });
       if (this.state.count === 12) {
         alert("Shante, you stay");
         this.restartGame();
