@@ -11,7 +11,7 @@ import queens from "./queens.json";
 class App extends Component {
   state = {
     queens,
-    count:1,
+    count:0,
     topCount:0
   };
 
